@@ -1,4 +1,10 @@
 Hotworkpermit::Application.routes.draw do
+  resources :permits
+
+  resources :admins
+
+  resources :projects
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
