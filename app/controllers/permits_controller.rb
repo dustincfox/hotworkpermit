@@ -15,6 +15,16 @@ class PermitsController < ApplicationController
   # GET /permits/new
   def new
     @permit = Permit.new
+    @project_ids = []
+    Project.all.each do |project|
+      project_temp = []
+      project_temp << project.name
+      project_temp << project.id
+
+      @project_ids << project_temp
+    end
+
+
   end
 
   # GET /permits/1/edit
@@ -24,7 +34,11 @@ class PermitsController < ApplicationController
   # POST /permits
   # POST /permits.json
   def create
-    @permit = Permit.new(post_params)
+
+    new_permit_params = post_params
+    new_permit_params["project"] = Project.find_by(id: new_permit_params["project"].to_i)
+
+    @permit = Permit.new(new_permit_params)
 
     respond_to do |format|
       if @permit.save
@@ -73,6 +87,6 @@ class PermitsController < ApplicationController
     end
 
     def post_params
-      params.require(:permit).permit(:sec1_q1, :sec1_q2, :sec1_q3, :sec1_q4, :sec1_q5, :sec1_q6)
+      params.require(:permit).permit(:status, :sec1_q1, :sec1_q2, :sec1_q3, :sec1_q4, :sec1_q5, :sec1_q6, :sec1_q7, :sec1_q8, :sec1_q9, :sec1_q10, :sec1_q11, :sec1_q12, :sec1_q13, :sec1_q14, :firewatch_sign_start, :project, :location, :building, :floor, :task, :company, :subcontractor_name)
     end
 end
