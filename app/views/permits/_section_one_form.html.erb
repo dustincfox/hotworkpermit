@@ -1,0 +1,53 @@
+<!-- t.boolean :sec1_q1
+    t.boolean :sec1_q2
+    t.boolean :sec1_q3
+    t.boolean :sec1_q4
+    t.boolean :sec1_q5
+    t.string :sec1_q6
+    t.boolean :sec1_q7
+    t.string :sec1_q8
+    t.string :sec1_q9
+    t.string :sec1_q10
+    t.boolean :sec1_q11
+    t.string :sec1_q12
+    t.string :sec1_q13
+    t.boolean :sec1_q14
+    t.string :firewatch_sign_start -->
+
+
+<h2>Section 1 - Hot Work Checklist</h2>
+<table>
+<tr>
+  <th>Question</th>
+  <th>(Y)</th>
+  <th>(N)</th>
+  <th>(N/A)</th>
+</tr>
+<tr>
+<td><%= label :sec1_q1, "I have completed pre-task planning for this work?" %></td>
+<td><%= f.radio_button :sec1_q1, true %></td>
+<td><%= f.radio_button :sec1_q1, false %></td>
+</tr>
+<td><%= label :sec1_q2, "I have removed and/or protected all combustibles within 35 feet of my hot work area. (i.e. wood, cardboard, debris etc.)" %></td>
+<td><%= f.radio_button :sec1_q2, true %></td>
+<td><%= f.radio_button :sec1_q2, false %></td>
+<tr>
+<td><%= label :sec1_q3, "I have removed all flammables within 50 feet of my work area. (i.e. gasoline, solvent, acetylene, liquid petroleum etc.)" %></td>
+<td><%= f.radio_button :sec1_q3, true %></td>
+<td><%= f.radio_button :sec1_q3, false %></td>
+</tr>
+<tr>
+<td><%= label :sec1_q4, "I have a means to extinguish a fire in my Hot Work Area (ABC)." %></td>
+<td><%= f.radio_button :sec1_q4, true %></td>
+<td><%= f.radio_button :sec1_q4, false %></td>
+</tr>
+<tr>
+<td><%= label :sec1_q5, "I have inspected my fire extinguisher and confirmed the extinguisher is fully charged." %></td>
+<td><%= f.radio_button :sec1_q5, true %></td>
+<td><%= f.radio_button :sec1_q5, false %></td>
+</tr>
+<tr>
+<td><%= label :sec1_q6, "I have barricaded all walkways below the Hot Work Area" %></td>
+<td><%= f.select :sec1_q6, Permit.sec1_q6.options %></td>
+</tr>
+</table>

@@ -24,7 +24,7 @@ class PermitsController < ApplicationController
   # POST /permits
   # POST /permits.json
   def create
-    @permit = Permit.new(permit_params)
+    @permit = Permit.new(post_params)
 
     respond_to do |format|
       if @permit.save
@@ -41,7 +41,7 @@ class PermitsController < ApplicationController
   # PATCH/PUT /permits/1.json
   def update
     respond_to do |format|
-      if @permit.update(permit_params)
+      if @permit.update(post_params)
         format.html { redirect_to @permit, notice: 'Permit was successfully updated.' }
         format.json { head :no_content }
       else
@@ -70,5 +70,9 @@ class PermitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def permit_params
       params[:permit]
+    end
+
+    def post_params
+      params.require(:permit).permit(:sec1_q1, :sec1_q2, :sec1_q3, :sec1_q4, :sec1_q5, :sec1_q6)
     end
 end
