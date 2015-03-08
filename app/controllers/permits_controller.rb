@@ -24,6 +24,15 @@ class PermitsController < ApplicationController
       @project_ids << project_temp
     end
 
+    @admin_ids = []
+    Admin.all.each do |admin|
+      admin_temp = []
+      admin_temp << admin.email
+      admin_temp << admin.id
+
+      @admin_ids << admin_temp
+    end
+
 
   end
 
@@ -36,7 +45,12 @@ class PermitsController < ApplicationController
   def create
 
     new_permit_params = post_params
+
     new_permit_params["project"] = Project.find_by(id: new_permit_params["project"].to_i)
+
+    new_permit_params["admin"] = Admin.find_by(id: new_permit_params["admin_temp"].to_i)
+
+    new_permit_params["status"] = "open"
 
     @permit = Permit.new(new_permit_params)
 
@@ -75,6 +89,20 @@ class PermitsController < ApplicationController
     end
   end
 
+  def for_review
+    @permits = Permit.where(admin: current_admin, status: "open")
+  end
+
+  def admin_closed
+    @permits = Permit.where(admin: current_admin, status: "closed")
+  end
+
+  def ongoing
+    @permits = Permit.where(admin: current_admin, status: "ready_to_inspect")
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_permit
@@ -87,6 +115,6 @@ class PermitsController < ApplicationController
     end
 
     def post_params
-      params.require(:permit).permit(:status, :sec1_q1, :sec1_q2, :sec1_q3, :sec1_q4, :sec1_q5, :sec1_q6, :sec1_q7, :sec1_q8, :sec1_q9, :sec1_q10, :sec1_q11, :sec1_q12, :sec1_q13, :sec1_q14, :firewatch_sign_start, :project, :location, :building, :floor, :task, :company, :subcontractor_name)
+      params.require(:permit).permit(:status, :sec1_q1, :sec1_q2, :sec1_q3, :sec1_q4, :sec1_q5, :sec1_q6, :sec1_q7, :sec1_q8, :sec1_q9, :sec1_q10, :sec1_q11, :sec1_q12, :sec1_q13, :sec1_q14, :firewatch_sign_start, :project, :location, :building, :floor, :task, :company, :subcontractor_name, :admin)
     end
 end
