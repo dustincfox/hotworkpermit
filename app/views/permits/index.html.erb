@@ -1,4 +1,6 @@
-<h1>Listing permits</h1>
+
+<div class="container">
+<h1 class="center">Open Permits</h1>
 
 <table>
   <thead>
@@ -12,14 +14,12 @@
   <tbody>
     <% @permits.each do |permit| %>
       <tr>
-        <td><%= link_to 'Show', permit %></td>
-        <td><%= link_to 'Edit', edit_permit_path(permit) %></td>
-        <td><%= link_to 'Destroy', permit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= permit.issued %></td>
+        <td><%= link_to '#{permit.id}', permit %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Permit', new_permit_path %>
+</div>
