@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_permit_path(@permit) %> |
-<%= link_to 'Back', permits_path %>
+<div class="center">
+    Permit ID: <%= @permit.id %>
+    <br>
+    Status: <%= @permit.status %>
+    <br>
+    Project: <%= @permit.project.name %>
+    <br>
+    Building: <%= @permit.building %>
+    <br>
+    Floor: <%= @permit.floor %>
+</div>

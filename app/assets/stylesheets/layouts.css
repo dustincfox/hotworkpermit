@@ -7,6 +7,11 @@
     text-color: #A32900;
 }
 
+.container {
+    background-color: #E6E6E6;
+    width: 50%;
+    border-radius: 5px;
+}
 
 .button-container {
     width: 50%;
@@ -25,7 +30,8 @@ header {
     margin-bottom: 50px;
 }
 
-header a:hover{
+ul a:hover, header a:hover{
     text-decoration: none;
     background-color: #fff;
 }
+
