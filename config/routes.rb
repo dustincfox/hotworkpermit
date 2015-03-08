@@ -1,10 +1,13 @@
 Hotworkpermit::Application.routes.draw do
   devise_for :admins
+
   resources :permits
 
-  resources :admins
+  #resources :admins
 
   resources :projects
+
+  resources :layouts
 
   root 'layouts#index'
 
