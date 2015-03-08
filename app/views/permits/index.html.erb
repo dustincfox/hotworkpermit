@@ -15,7 +15,7 @@
     <% @permits.each do |permit| %>
       <tr>
         <td><%= permit.issued %></td>
-        <td><%= link_to '#{permit.id}', permit %></td>
+        <td><%= link_to "#{permit.id}", permit %></td>
       </tr>
     <% end %>
   </tbody>
