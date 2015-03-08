@@ -14,10 +14,13 @@
   <tbody>
     <% @permits.each do |permit| %>
       <tr>
+<<<<<<< HEAD
         <td><%= permit.issued %></td>
         <td><%= link_to '#{permit.id}', permit %></td>
         <td><%= permit.status %></td>
         <td><%= permit.subcontractor_name %></td>
+=======
+>>>>>>> add permit details to permit index view
         <td><%= link_to 'Show', permit %></td>
         <td><%= link_to 'Edit', edit_permit_path(permit) %></td>
         <td><%= link_to 'Destroy', permit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
