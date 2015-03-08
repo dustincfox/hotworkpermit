@@ -15,6 +15,16 @@ projects = 10.times.map do
     })
 end
 
+admins = 20.times.map do
+    Admin.create! ({
+        email: Faker::Internet.email,
+        password: "password",
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name
+        })
+end
+
+
 20.times.map do 
    Permit.create! ({
     status:  "closed",
@@ -25,15 +35,29 @@ end
     company: "Company Name",
     subcontractor_name: "Bob",
 
+    sec1_q1: [true, false].sample,
+    sec1_q2: [true, false].sample, 
+    sec1_q3: [true, false].sample,
+    sec1_q4: [true, false].sample,
+    sec1_q5: [true, false].sample,
+    sec1_q6:  ["yes", "no", "na"].sample,
+    sec1_q7: [true, false].sample,
+    sec1_q8:  ["yes", "no", "na"].sample,
+    sec1_q9:  ["yes", "no", "na"].sample,
+    sec1_q10:  ["yes", "no", "na"].sample,
+    sec1_q11: [true, false].sample,
+    sec1_q12:  ["yes", "no", "na"].sample,
+    sec1_q13:  ["yes", "no", "na"].sample,
+    sec1_q14: [true, false].sample,
+
     issued: Faker::Time.date,
     expires: Faker::Time.date,
-    admin: Admin.first
+    admin: admins.sample
     })
 end
 
 20.times.map do 
     Permit.create! ({
-    status: "ready_to_inspect",
     project: projects.sample,
     location: Faker::Address.city,
     floor: rand(1..6),
@@ -41,9 +65,24 @@ end
     company: "Company Name",
     subcontractor_name: "Bob",
 
+    sec1_q1: [true, false].sample,
+    sec1_q2: [true, false].sample, 
+    sec1_q3: [true, false].sample,
+    sec1_q4: [true, false].sample,
+    sec1_q5: [true, false].sample,
+    sec1_q6:  ["yes", "no", "na"].sample,
+    sec1_q7: [true, false].sample,
+    sec1_q8:  ["yes", "no", "na"].sample,
+    sec1_q9:  ["yes", "no", "na"].sample,
+    sec1_q10:  ["yes", "no", "na"].sample,
+    sec1_q11: [true, false].sample,
+    sec1_q12:  ["yes", "no", "na"].sample,
+    sec1_q13:  ["yes", "no", "na"].sample,
+    sec1_q14: [true, false].sample,
+
     issued: Faker::Time.date,
     expires: Faker::Time.date,
-    admin: Admin.first
+    admin: admins.sample
     })
 end
 
@@ -57,9 +96,24 @@ end
     company: "Company Name",
     subcontractor_name: "Bob",
 
+    sec1_q1: [true, false].sample,
+    sec1_q2: [true, false].sample, 
+    sec1_q3: [true, false].sample,
+    sec1_q4: [true, false].sample,
+    sec1_q5: [true, false].sample,
+    sec1_q6:  ["yes", "no", "na"].sample,
+    sec1_q7: [true, false].sample,
+    sec1_q8:  ["yes", "no", "na"].sample,
+    sec1_q9:  ["yes", "no", "na"].sample,
+    sec1_q10:  ["yes", "no", "na"].sample,
+    sec1_q11: [true, false].sample,
+    sec1_q12:  ["yes", "no", "na"].sample,
+    sec1_q13:  ["yes", "no", "na"].sample,
+    sec1_q14: [true, false].sample,
+
     issued: Faker::Time.date,
     expires: Faker::Time.date,
-    admin: Admin.first
+    admin: admins.sample
     })
 end
 
@@ -75,8 +129,23 @@ end
     company: "Company Name",
     subcontractor_name: "Bob",
 
+    sec1_q1: [true, false].sample,
+    sec1_q2: [true, false].sample, 
+    sec1_q3: [true, false].sample,
+    sec1_q4: [true, false].sample,
+    sec1_q5: [true, false].sample,
+    sec1_q6:  ["yes", "no", "na"].sample,
+    sec1_q7: [true, false].sample,
+    sec1_q8:  ["yes", "no", "na"].sample,
+    sec1_q9:  ["yes", "no", "na"].sample,
+    sec1_q10:  ["yes", "no", "na"].sample,
+    sec1_q11: [true, false].sample,
+    sec1_q12:  ["yes", "no", "na"].sample,
+    sec1_q13:  ["yes", "no", "na"].sample,
+    sec1_q14: [true, false].sample,
+
     issued: Faker::Time.date,
     expires: Faker::Time.date,
-    admin: Admin.first
+    admin: admins.sample
     })
 end
