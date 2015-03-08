@@ -1,1 +1,11 @@
 <h1 class="center"> Closed Permits</h1>
+
+<div class="center button-container list-group">
+    <% @permits.each do |permit| %>
+      <ul>
+        <li class="list-group-item"><%= link_to "ID: #{permit.id}", permit %>  <%= link_to "#{permit.project.name}", permit %></li>
+        <li class="list-group-item">Sub Contractor: <%= permit.subcontractor_name %>  <%= permit.admin.last_name %></li>
+      </ul>
+      <br>
+    <%end%>
+</div>
