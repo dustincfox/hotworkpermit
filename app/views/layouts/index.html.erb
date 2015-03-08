@@ -1,8 +1,12 @@
 <div class="button-container">
     <ul class="nav nav-pills nav-stacked">
         <li role="presentation" class="active"><%= link_to  'Sub Contractors',  suboptions_path %></li>
-            
-         <li role="presentation"><%= link_to 'Admin', admin_session_path %></li>  
+        
+        <% if current_admin %>
+            <li role="presentation" class="active"><%= link_to 'Admin', adminoptions_path %></li>
+        <% else %>
+            <li role="presentation" class="active"><%= link_to 'Admin', admin_session_path %></li>
+        <% end %> 
     </ul>
 </div>
 

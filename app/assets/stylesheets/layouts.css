@@ -19,3 +19,12 @@ li a{
     font-size: 3em;
     line-height: 55px;
 }
+
+header {
+    margin-bottom: 50px;
+}
+
+header a:hover{
+    text-decoration: none;
+    background-color: #fff;
+}
