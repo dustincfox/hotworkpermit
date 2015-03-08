@@ -1,10 +1,13 @@
-<!-- Create two buttons; one for admin and one for workers/subcontractors -->
-
-<div class="cat_btn center">
-    <h1> Sub Contractors </h1>
+<div class="button-container">
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><%= link_to  'Sub Contractors',  suboptions_path %></li>
+        
+        <% if current_admin %>
+            <li role="presentation" class="active"><%= link_to 'Admin', adminoptions_path %></li>
+        <% else %>
+            <li role="presentation" class="active"><%= link_to 'Admin', admin_session_path %></li>
+        <% end %> 
+    </ul>
 </div>
 
-<div class="cat_btn center">
-    <h1> Admin </h1> 
-</div>
-
+  

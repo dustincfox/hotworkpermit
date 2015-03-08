@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hotworkpermit</title>
+  <title>Hot work permit</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <div class="center button-container">
+      <header class="center"><h1><%= link_to 'HOT WORK PERMIT', root_path %></h1></header>
+      <% if notice %>
+        <p class="alert alert-info" role="alert"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-warning" role="alert"><%= alert %></p>
+      <% end %>
+    </div>
 
 <%= yield %>
 
