@@ -1,0 +1,9 @@
+.center {
+    text-align: center;
+}
+
+.cat_btn {
+    width: 50%;
+    background-color: #FF9900;
+    border-radius: 5%;
+}
