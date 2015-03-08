@@ -1,6 +1,8 @@
 class CreatePermits < ActiveRecord::Migration
   def change
     create_table :permits do |t|
+      t.string :status
+
       t.boolean :sec1_q1
       t.boolean :sec1_q2
       t.boolean :sec1_q3
