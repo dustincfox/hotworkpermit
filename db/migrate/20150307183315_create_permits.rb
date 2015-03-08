@@ -15,9 +15,29 @@ class CreatePermits < ActiveRecord::Migration
       t.string :sec1_q12
       t.string :sec1_q13
       t.boolean :sec1_q14
-      t.string :firewatch_name
+      t.string :firewatch_sign_start
 
-      t.datetime :date
+      t.references :project
+      t.string :location
+      t.string :building
+      t.integer :floor
+      t.text :task
+      t.string :company
+      t.string :subcontractor_name
+
+
+
+      t.datetime :issued
+      t.datetime :expires
+      t.references :admin
+      t.text :comments
+
+
+      t.boolean :sec3_q1
+      t.boolean :sec3_q2
+      t.datetime :sec3_date
+      t.string :subcontractor_sign
+      t.string :firewatch_sign_end
 
 
 
