@@ -12,6 +12,10 @@ Hotworkpermit::Application.routes.draw do
 
   get 'adminoptions', :to => 'layouts#admin_options'
 
+  get 'for_review', :to => 'permits#for_review'
+  get 'admin_closed', :to => 'permits#admin_closed'
+  get 'ongoing', :to => 'permits#ongoing'
+
   root 'layouts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
