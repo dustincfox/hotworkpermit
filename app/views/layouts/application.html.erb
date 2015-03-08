@@ -4,11 +4,14 @@
   <title>Hotworkpermit</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <header class="center"><h1>HOT WORK PERMIT </h1></header>
+  <p class="notice center"><%= notice %></p>
+  <p class="alert center"><%= alert %></p>
 
 <%= yield %>
 

@@ -2,8 +2,20 @@
     text-align: center;
 }
 
-.cat_btn {
+
+.notice, .alert {
+    text-color: ##A32900;
+}
+
+
+.button-container {
     width: 50%;
-    background-color: #FF9900;
-    border-radius: 5%;
+    margin: 0 auto;
+}
+
+li a{
+    height: 90px;
+    text-align: center;
+    font-size: 3em;
+    line-height: 55px;
 }

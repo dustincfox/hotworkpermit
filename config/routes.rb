@@ -8,6 +8,10 @@ Hotworkpermit::Application.routes.draw do
 
   resources :layouts
 
+  get 'suboptions', :to => 'layouts#subcontractor_options'
+
+  get 'adminoptions', :to => 'layouts#admin_options'
+
   root 'layouts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
