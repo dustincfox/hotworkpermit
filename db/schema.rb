@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150308023812) do
   add_index "admins_projects", ["project_id", "admin_id"], name: "index_admins_projects_on_project_id_and_admin_id", using: :btree
 
   create_table "permits", force: true do |t|
+    t.string   "status"
     t.boolean  "sec1_q1"
     t.boolean  "sec1_q2"
     t.boolean  "sec1_q3"
