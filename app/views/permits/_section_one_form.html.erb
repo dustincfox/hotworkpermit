@@ -15,133 +15,138 @@
     t.string :firewatch_sign_start -->
 
 
-<h2>Section 1 - Hot Work Checklist</h2>
-<h3>WORK EXECUTION</h3>
-<table>
-<tr>
-  <th>Question</th>
-  <th>(Y)</th>
-  <th>(N)</th>
-</tr>
-<tr>
-<td><%= label :sec1_q1, "I have completed pre-task planning for this work?" %></td>
-<td><%= f.radio_button :sec1_q1, true %></td>
-<td><%= f.radio_button :sec1_q1, false %></td>
-</tr>
-<td><%= label :sec1_q2, "I have removed and/or protected all combustibles within 35 feet of my hot work area. (i.e. wood, cardboard, debris etc.)" %></td>
-<td><%= f.radio_button :sec1_q2, true %></td>
-<td><%= f.radio_button :sec1_q2, false %></td>
-<tr>
-<td><%= label :sec1_q3, "I have removed all flammables within 50 feet of my work area. (i.e. gasoline, solvent, acetylene, liquid petroleum etc.)" %></td>
-<td><%= f.radio_button :sec1_q3, true %></td>
-<td><%= f.radio_button :sec1_q3, false %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q4, "I have a means to extinguish a fire in my Hot Work Area (ABC)." %></td>
-<td><%= f.radio_button :sec1_q4, true %></td>
-<td><%= f.radio_button :sec1_q4, false %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q5, "I have inspected my fire extinguisher and confirmed the extinguisher is fully charged." %></td>
-<td><%= f.radio_button :sec1_q5, true %></td>
-<td><%= f.radio_button :sec1_q5, false %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q6, "I have barricaded all walkways below the Hot Work Area" %></td>
-<td><%= f.select :sec1_q6, Permit.sec1_q6.options %></td>
-</tr>
-</table>
+<div class="section">
+  <h2 class="center form-head">Section 1 <br> Hot Work Checklist</h2>
+  <h3 class="center form-head">WORK EXECUTION</h3>
 
-<h3>EXISTING FACILITIES</h3>
-<table>
-<tr>
-  <th>Question</th>
-  <th>(Y)</th>
-  <th>(N)</th>
-</tr>
-<tr>
-<td><%= label :sec1_q7, "Is the hot work in or around an existing building or structure?" %></td>
-<td><%= f.radio_button :sec1_q7, true %></td>
-<td><%= f.radio_button :sec1_q7, false %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q8, "If yes, has building owner or facilities staff been notified?" %></td>
-<td><%= f.select :sec1_q8, Permit.sec1_q8.options %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q9, "If yes, have you identified activates utilities / system (alarm, HVAC, fire, etc.) in your hot work area and protected from sparks, gasses, fumes, heat etc.?" %></td>
-<td><%= f.select :sec1_q9, Permit.sec1_q9.options %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q10, "If yes, have you reviewed the disruption avoidance plan and are you implementing the required procedures?" %></td>
-<td><%= f.select :sec1_q10, Permit.sec1_q10.options %></td>
-</tr>
-</table>
 
-<h3>CONFINED SPACE</h3>
-<table>
-<tr>
-  <th>Question</th>
-  <th>(Y)</th>
-  <th>(N)</th>
-</tr>
-<tr>
-<td><%= label :sec1_q11, "Is the hot work in or adjacent to a confined space?" %></td>
-<td><%= f.radio_button :sec1_q11, true %></td>
-<td><%= f.radio_button :sec1_q11, false %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q12, "If yes, has the confined space been cleared of all combustibles and flammables?" %></td>
-<td><%= f.select :sec1_q12, Permit.sec1_q12.options %></td>
-</tr>
-<tr>
-<td><%= label :sec1_q13, "If yes, have you reviewed and are you implementing confined space permit procedures? (attached confined space permit)?" %></td>
-<td><%= f.select :sec1_q13, Permit.sec1_q13.options %></td>
-</tr>
-<tr>
-<tr><td><hr></td></tr>
-<td><%= label :sec1_q14, "I need additional fire watch due to multiples levels, above/below ceiling conditions, or work on opposite side of wall." %></td>
-<td><%= f.radio_button :sec1_q14, true %></td>
-<td><%= f.radio_button :sec1_q14, false %></td>
-</tr>
-<tr>
-<td><%= label :firewatch_sign_start, "Firewatch name:" %></td>
-<td><%= f.text_field :firewatch_sign_start %></td>
-</tr>
-</table>
+  <table>
+<!--   <tr>
+    <th>Question</th>
+    <th>(Y)</th>
+    <th>(N)</th>
+  </tr> -->
+  <tr>
+  <td><%= label :sec1_q1, "I have completed pre-task planning for this work?" %></td>
+  <td> Yes <%= f.radio_button :sec1_q1, true %></td>
+  <td> No <%= f.radio_button :sec1_q1, false %></td>
+  </tr>
+  <td><%= label :sec1_q2, "I have removed and/or protected all combustibles within 35 feet of my hot work area. (i.e. wood, cardboard, debris etc.)" %></td>
+  <td>Yes<%= f.radio_button :sec1_q2, true %></td>
+  <td>No<%= f.radio_button :sec1_q2, false %></td>
+  <tr>
+  <td><%= label :sec1_q3, "I have removed all flammables within 50 feet of my work area. (i.e. gasoline, solvent, acetylene, liquid petroleum etc.)" %></td>
+  <td> Yes<%= f.radio_button :sec1_q3, true %></td>
+  <td> No <%= f.radio_button :sec1_q3, false %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q4, "I have a means to extinguish a fire in my Hot Work Area (ABC)." %></td>
+  <td> Yes<%= f.radio_button :sec1_q4, true %></td>
+  <td> No <%= f.radio_button :sec1_q4, false %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q5, "I have inspected my fire extinguisher and confirmed the extinguisher is fully charged." %></td>
+  <td> Yes <%= f.radio_button :sec1_q5, true %></td>
+  <td> No <%= f.radio_button :sec1_q5, false %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q6, "I have barricaded all walkways below the Hot Work Area" %></td>
+  <td><%= f.select :sec1_q6, Permit.sec1_q6.options %></td>
+  </tr>
+  </table>
 
-<h2>Section 2 - Hot Work Information</h2>
-<table>
-<tr>
-<td><%= label :project, "Choose associated project:" %></td>
-<td><%= f.select :project, options_for_select(@project_ids) %></td>
-</tr>
-<tr>
-<td><%= label :location, "Location:" %></td>
-<td><%= f.text_field :location %></td>
-</tr>
-<tr>
-<td><%= label :building, "Building:" %></td>
-<td><%= f.text_field :building %></td>
-</tr>
-<tr>
-<td><%= label :floor, "Floor:" %></td>
-<td><%= f.text_field :floor %></td>
-</tr>
-<tr>
-<td><%= f.label :task, "Task being performed:" %></td>
-<td><%= f.text_area :task, cols: 40, rows: 10 %></td>
-</tr>
-<tr>
-<td><%= label :company, "Company:" %></td>
-<td><%= f.text_field :company %></td>
-</tr>
-<tr>
-<td><%= label :subcontractor_name, "Your Name:" %></td>
-<td><%= f.text_field :subcontractor_name %></td>
-</tr>
-</table>
+  <h3 class="center form-head">EXISTING FACILITIES</h3>
+  <table>
+  <tr>
+    <th>Question</th>
+    <th>(Y)</th>
+    <th>(N)</th>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q7, "Is the hot work in or around an existing building or structure?" %></td>
+  <td><%= f.radio_button :sec1_q7, true %></td>
+  <td><%= f.radio_button :sec1_q7, false %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q8, "If yes, has building owner or facilities staff been notified?" %></td>
+  <td><%= f.select :sec1_q8, Permit.sec1_q8.options %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q9, "If yes, have you identified activates utilities / system (alarm, HVAC, fire, etc.) in your hot work area and protected from sparks, gasses, fumes, heat etc.?" %></td>
+  <td><%= f.select :sec1_q9, Permit.sec1_q9.options %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q10, "If yes, have you reviewed the disruption avoidance plan and are you implementing the required procedures?" %></td>
+  <td><%= f.select :sec1_q10, Permit.sec1_q10.options %></td>
+  </tr>
+  </table>
 
+  <h3 class="center form-head">CONFINED SPACE</h3>
+  <table>
+  <tr>
+    <th>Question</th>
+    <th>(Y)</th>
+    <th>(N)</th>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q11, "Is the hot work in or adjacent to a confined space?" %></td>
+  <td><%= f.radio_button :sec1_q11, true %></td>
+  <td><%= f.radio_button :sec1_q11, false %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q12, "If yes, has the confined space been cleared of all combustibles and flammables?" %></td>
+  <td><%= f.select :sec1_q12, Permit.sec1_q12.options %></td>
+  </tr>
+  <tr>
+  <td><%= label :sec1_q13, "If yes, have you reviewed and are you implementing confined space permit procedures? (attached confined space permit)?" %></td>
+  <td><%= f.select :sec1_q13, Permit.sec1_q13.options %></td>
+  </tr>
+  <tr>
+  <tr><td><hr></td></tr>
+  <td><%= label :sec1_q14, "I need additional fire watch due to multiples levels, above/below ceiling conditions, or work on opposite side of wall." %></td>
+  <td> <%= f.radio_button :sec1_q14, true %></td>
+  <td> <%= f.radio_button :sec1_q14, false %></td>
+  </tr>
+  <tr>
+  <td><%= label :firewatch_sign_start, "Firewatch name:" %></td>
+  <td><%= f.text_field :firewatch_sign_start %></td>
+  </tr>
+</table>
+</div>
+
+<div class="section">
+  <h2 class="center form-head">Section 2 <br> Hot Work Information</h2>
+  <table>
+  <tr>
+  <td><%= label :project, "Choose associated project:" %></td>
+  <td><%= f.select :project, options_for_select(@project_ids) %></td>
+  </tr>
+  <tr>
+  <td><%= label :location, "Location:" %></td>
+  <td><%= f.text_field :location %></td>
+  </tr>
+  <tr>
+  <td><%= label :building, "Building:" %></td>
+  <td><%= f.text_field :building %></td>
+  </tr>
+  <tr>
+  <td><%= label :floor, "Floor:" %></td>
+  <td><%= f.text_field :floor %></td>
+  </tr>
+  <tr>
+  <td><%= f.label :task, "Task being performed:" %></td>
+  <td><%= f.text_area :task, cols: 40, rows: 10 %></td>
+  </tr>
+  <tr>
+  <td><%= label :company, "Company:" %></td>
+  <td><%= f.text_field :company %></td>
+  </tr>
+  <tr>
+  <td><%= label :subcontractor_name, "Your Name:" %></td>
+  <td><%= f.text_field :subcontractor_name %></td>
+  </tr>
+  </table>
+</div>
 <!--
 t.string :location
 t.string :building
